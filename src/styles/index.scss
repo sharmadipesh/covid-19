@@ -1,7 +1,12 @@
+// tools
 @import './1-tools/fonts';
 @import './1-tools/vars';
 
+// basic
 @import './2-basic/app';
 
+
+// components
 @import './3-components/common';
 @import './3-components/dashboard';
+@import './3-components/flexbox';

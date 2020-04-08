@@ -1,0 +1,39 @@
+.header-container{
+    padding: 20px 30px;
+    @media (max-width:900px) and (min-width:300px) {
+        padding:15px;
+    }
+    .page-logo{
+        height: 65px;
+        width: 65px;
+        @media (max-width:900px) and (min-width:300px) {
+            height: 8vh;
+            width: 20vw;
+        }
+    }
+    .header-title{
+        font-size: 28px;
+        font-family:$lato-bold;
+    }
+}
+
+// worldwide container
+.world-wide-container{
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.card-styling{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+// =================================
+// text-colors
+// =================================
+.text-color-white{
+    color: #fff;
+}
+
+.color-text-green{
+    color: #EB5569;
+}

@@ -20,9 +20,11 @@
 // worldwide container
 .world-wide-container{
     overflow-x: auto;
-    // overflow-y: hidden;
-    
+    font-size: 25px;
+    font-family: $lato-semibold;
     padding: 20px 30px;
+    font-weight: 700;
+
     @include media-breakpoint-down(lg){
         padding:15px;
     }
@@ -35,13 +37,11 @@
         // background-color: #88fcf0;
         // background-color: #962752;
         background-color: #d8b9c3;
-
         border: 5px solid hsla(0,0%,100%,.28);
     }
     .card-recovery{
         // background-color: #20e47d;
         background-color: #d8b9c3;
-
         border: 5px solid hsla(0,0%,100%,.28);
     }
 }
@@ -85,4 +85,12 @@
 
 .color-text-green{
     color: #EB5569;
+}
+
+.text-color-card{
+    color: #827397;
+}
+
+.color-card-text{
+    color:#4d4c7d;
 }

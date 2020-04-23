@@ -1,6 +1,6 @@
 import { API_BASE_URL } from 'config/config';
 import Api_url from 'config/api-url';
-import { axiosAuth, axiosNoAuth } from 'config/axios-instances';
+import { axiosNoAuth } from 'config/axios-instances';
 
 import {
     REDUX_FIRST_CALL_CHECK,

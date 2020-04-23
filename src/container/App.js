@@ -9,7 +9,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { axiosAuthMiddleware } from 'middleware/axios-middleware';
 import reducers from 'redux/reducers';
 
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import MainLayout from 'pages/layout/MainLayout';
 
 const createStoreWithMiddleware = applyMiddleware(

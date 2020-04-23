@@ -1,0 +1,21 @@
+.sidebar-style-container{
+    .active-sidebar-link{
+        font-weight: 700;
+        font-family: $lato-bold;
+        font-size: 25px;
+        color: #EB5569!important;
+        padding: 10px 30px;
+        text-decoration: none;
+    }
+    .sidebar-link{
+        font-size: 25px;
+        color: #363062;
+        text-decoration: none;
+        padding: 10px 30px;
+        // margin-bottom: 40px;
+    }
+    .icon-h-w{
+        height: 35px;
+        width: 35px;
+    }
+}

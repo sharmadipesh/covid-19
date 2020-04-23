@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import {getGlobalCountData,checkReduxSetOrNot} from 'redux/actions/country';
 import idx from 'idx';
 import CountUp from 'react-countup';
+// import Header from 'components/Header';
 
 class Dashboard extends Component {
 
@@ -14,15 +15,7 @@ class Dashboard extends Component {
     render() {
         return (
             <div>
-                <div className="header-container">
-                    <div className="d-flex align-items-center">
-                        <img alt="logo" id="loading" src="images/virus.svg" className="page-logo mr-10"/>
-                        <div className="d-flex align-items-center">
-                            <div className="header-title text-color-white">COVID - </div>
-                            <div className="header-title color-text-green">19</div>
-                        </div>
-                    </div>
-                </div>
+                {/* <Header {...this.props}/> */}
                 {/* worldwide container */}
                 <div className="mtb-10 d-flex flex-nowrap world-wide-container">
                     <div className="card-style card-death d-flex align-items-center flex-column justify-content-center">

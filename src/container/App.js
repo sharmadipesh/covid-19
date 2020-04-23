@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import 'styles/index.scss';
-import Dashboard from 'pages/dashboard';
+// import Dashboard from 'pages/dashboard';
 
 import logger from 'redux-logger';
 import reduxThunk from 'redux-thunk';
@@ -9,6 +9,8 @@ import { createStore, applyMiddleware } from 'redux';
 import { axiosAuthMiddleware } from 'middleware/axios-middleware';
 import reducers from 'redux/reducers';
 
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import MainLayout from 'pages/layout/MainLayout';
 
 const createStoreWithMiddleware = applyMiddleware(
   reduxThunk,
@@ -25,9 +27,9 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <div>
-          <Dashboard {...this.props} />
-        </div>
+        <Router>
+          <Route path={'/'} component={MainLayout} />
+        </Router>
       </Provider>
     );
   }

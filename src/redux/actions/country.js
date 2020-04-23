@@ -4,7 +4,8 @@ import { axiosNoAuth } from 'config/axios-instances';
 
 import {
     REDUX_FIRST_CALL_CHECK,
-    GLOBAL_LATEST_COUNT
+    GLOBAL_LATEST_COUNT,
+    GLOBAL_COUNTRY_COUNT
 } from 'redux/types';
 
 export function checkReduxSetOrNot(data, successCallback, errorCallback) {
@@ -32,6 +33,24 @@ export function getGlobalCountData(successCallback, errorCallback) {
 
         await dispatch({
           type:GLOBAL_LATEST_COUNT,
+          payload: response.data
+        });
+
+      successCallback && successCallback();
+    } catch (e) {
+      console.error(e);
+      errorCallback && errorCallback(e.response);
+    }
+  };
+}
+
+export function getSpecificCountryData(countryCode,successCallback, errorCallback) {
+  return async function(dispatch) {
+    try {
+        let response = await axiosNoAuth.get(API_BASE_URL + `https://covidapi.info/api/v1/country/${countryCode}/latest`);
+
+        await dispatch({
+          type:GLOBAL_COUNTRY_COUNT,
           payload: response.data
         });
 

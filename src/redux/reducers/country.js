@@ -1,11 +1,13 @@
 import {
     REDUX_FIRST_CALL_CHECK,
-    GLOBAL_LATEST_COUNT
+    GLOBAL_LATEST_COUNT,
+    GLOBAL_COUNTRY_COUNT
 } from '../types';
 
 const initial_state = {
     redux_connected:false,
-    global_count_Data:null
+    global_count_Data:null,
+    country_count_data:null
 };
 
 export default (state = initial_state, action) => {
@@ -19,6 +21,11 @@ export default (state = initial_state, action) => {
             return {
                 ...state,
                 global_count_Data: action.payload
+            };
+        case GLOBAL_COUNTRY_COUNT:
+            return {
+                ...state,
+                country_count_data: action.payload
             };
         default:
             return state;

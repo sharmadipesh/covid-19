@@ -3,11 +3,22 @@ import idx from 'idx';
 import CardForCount from 'components/CardForCount';
 import { connect } from 'react-redux';
 import CountryData from 'components/CountryData';
+import { getSpecificCountryData } from "redux/actions/country";
 
 class MainCountry extends Component {
 
-    componentDidMount =() =>{
+    state = {
+        countryCode:'IN'
+    }
 
+    componentDidMount =() =>{
+        // this.props.getSpecificCountryData('IND');
+    }
+
+    selectHandler = (e) =>{
+        this.setState({
+            countryCode:e.target.value
+        })
     }
 
     render() {
@@ -18,7 +29,11 @@ class MainCountry extends Component {
                         <div className="col-md-6 col-12 col-lg-6 pl-25 pr-20">
                             <div className="form-group">
                                 <label htmlFor="exampleFormControlSelect1">Country</label>
-                                <select className="form-control form-control-lg select-option" >
+                                <select 
+                                    className="form-control form-control-lg select-option" 
+                                    onChange={this.change} 
+                                    value={this.state.countryCode}
+                                >
                                     {/* <option>1</option> */}
                                     {CountryData.map((country,index)=><option key={index} value={country.code}>{country.name}</option>)}
                                 </select>
@@ -44,5 +59,5 @@ function mapStateToProps(state) {
 
 export default connect(
     mapStateToProps,
-    {}
+    {getSpecificCountryData}
 )(MainCountry);

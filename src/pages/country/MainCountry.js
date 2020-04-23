@@ -1,13 +1,48 @@
 import React, { Component } from 'react';
+import idx from 'idx';
+import CardForCount from 'components/CardForCount';
+import { connect } from 'react-redux';
+import CountryData from 'components/CountryData';
 
 class MainCountry extends Component {
+
+    componentDidMount =() =>{
+
+    }
+
     render() {
         return (
             <div>
-                Country
+                <div className="container">
+                    <div className="row mt-10">
+                        <div className="col-md-6 col-12 col-lg-6 pl-25 pr-20">
+                            <div className="form-group">
+                                <label htmlFor="exampleFormControlSelect1">Country</label>
+                                <select className="form-control form-control-lg select-option" >
+                                    {/* <option>1</option> */}
+                                    {CountryData.map((country,index)=><option key={index} value={country.code}>{country.name}</option>)}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <CardForCount covid={{
+                    confirmed:0,
+                    recovered:0,
+                    deaths:0
+                }}/>
             </div>
         );
     }
 }
 
-export default MainCountry;
+// export default MainCountry;
+function mapStateToProps(state) {
+    return {
+    };
+}
+
+export default connect(
+    mapStateToProps,
+    {}
+)(MainCountry);

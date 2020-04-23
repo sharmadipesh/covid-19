@@ -1,0 +1,22 @@
+.form-control {
+    background-color: #f4f4f4;
+    border: 1px solid #d8b9c3;
+    font-family: $lato-semibold;
+    &:focus, &:active, &:hover {
+        background-color: #f4f4f4;
+        border: 1px solid #d8b9c3;
+    }
+}
+.select-option {
+    background: #f4f4f4 url('/images/black-dropdown-arrow-down.svg') no-repeat 95% center;
+    -webkit-appearance: none;
+    appearance: none;
+    -moz-appearance: none;
+}
+
+label{
+    font-family: $lato-semibold;
+    font-size: 25px;
+    // color: #d8b9c3;
+    color: #EB5569;
+}

@@ -47,7 +47,7 @@ export function getGlobalCountData(successCallback, errorCallback) {
 export function getSpecificCountryData(countryCode,successCallback, errorCallback) {
   return async function(dispatch) {
     try {
-        let response = await axiosNoAuth.get(API_BASE_URL + `https://covidapi.info/api/v1/country/${countryCode}/latest`);
+        let response = await axiosNoAuth.get(API_BASE_URL + `/api/v1/country/${countryCode}/latest`);
 
         await dispatch({
           type:GLOBAL_COUNTRY_COUNT,

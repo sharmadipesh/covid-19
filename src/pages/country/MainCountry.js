@@ -12,10 +12,11 @@ class MainCountry extends Component {
     }
 
     componentDidMount =() =>{
-        // this.props.getSpecificCountryData('IND');
+        this.props.getSpecificCountryData('IN');
     }
 
     selectHandler = (e) =>{
+        console.log(e.target.value)
         this.setState({
             countryCode:e.target.value
         })
@@ -31,7 +32,7 @@ class MainCountry extends Component {
                                 <label htmlFor="exampleFormControlSelect1">Country</label>
                                 <select 
                                     className="form-control form-control-lg select-option" 
-                                    onChange={this.change} 
+                                    onChange={this.selectHandler} 
                                     value={this.state.countryCode}
                                 >
                                     {/* <option>1</option> */}

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import {getGlobalCountData,checkReduxSetOrNot} from 'redux/actions/country';
 import idx from 'idx';
 import CardForCount from 'components/CardForCount';
+import DoughnutChart from 'components/DoughnutChart';
 
 class Dashboard extends Component {
 
@@ -20,6 +21,15 @@ class Dashboard extends Component {
                     recovered:idx(this.props.global_count_Data,_=>_.result.recovered),
                     deaths:idx(this.props.global_count_Data,_=>_.result.deaths)
                 }}/>
+                <div>
+                    {/* {DoughnutChart()} */}
+                    <DoughnutChart 
+                        confirmed={idx(this.props.global_count_Data,_=>_.result.confirmed)}
+                        recovered={idx(this.props.global_count_Data,_=>_.result.recovered)}
+                        deaths={idx(this.props.global_count_Data,_=>_.result.deaths)}
+                        moduleName='Worldwide'
+                    />
+                </div>
             </div>
         );
     }

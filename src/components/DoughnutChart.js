@@ -17,10 +17,36 @@ function DoughnutChart({confirmed,recovered,deaths,moduleName}) {
             }
         },
         legend: {
-            // orient: 'vertical',
-            // left: 10,
-            data: ['Confirmed','Recovered','Deaths']
+            show:true,
+            orient:'vertical',
+            left:'left',
+            itemGap:10,
+            data: [{
+                        name:'Confirmed',
+                        textStyle:{
+                            color:'#d8b9c3',
+                            fontSize:18,
+                            fontFamily:'Lato-Semibold'
+                        }
+                    },{
+                        name:'Recovered',
+                        textStyle:{
+                            color:'#d8b9c3',
+                            fontSize:18,
+                            fontFamily:'Lato-Semibold'
+                        }
+                    },{
+                        name:'Deaths',
+                        textStyle:{
+                            color:'#d8b9c3',
+                            fontSize:18,
+                            fontFamily:'Lato-Semibold'
+                        }
+                    }]
         },
+
+
+
         tooltip: {
             show:true,
             trigger: 'item',
@@ -91,7 +117,7 @@ function DoughnutChart({confirmed,recovered,deaths,moduleName}) {
     };
     
     return (
-        <div className="d-flex align-items-center justify-content-center">
+        <div className="d-flex align-items-center justify-content-center mt-40">
 			<ReactEcharts option={Options} style={{ height: '320px', width: '320px' }} />
         </div>
     );
